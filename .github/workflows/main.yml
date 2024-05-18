@@ -3,7 +3,7 @@ name: Deploy to Oracle
 on:
   push:
     branches:
-      - main  # Change this to your default branch
+      - main  # Ensure this matches your branch name
 
 jobs:
   deploy:
@@ -13,17 +13,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: |
-        python -m venv venv
-        source venv/bin/activate
-        pip install flask gunicorn
-
     - name: Copy files via SSH
       uses: appleboy/scp-action@v0.1.0
       with:
@@ -32,6 +21,15 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         source: "backend/*"
         target: "/home/ubuntu/AgentQuiz/backend/"
+
+    - name: Copy frontend files via SSH
+      uses: appleboy/scp-action@v0.1.0
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        source: "frontend/*"
+        target: "/home/ubuntu/AgentQuiz/frontend/"
 
     - name: Restart service
       uses: appleboy/ssh-action@v0.1.2
