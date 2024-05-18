@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Copy files via SSH
+    - name: Copy backend files via SSH
       uses: appleboy/scp-action@v0.1.0
       with:
         host: ${{ secrets.HOST }}
