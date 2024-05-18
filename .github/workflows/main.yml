@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # Ensure this matches your branch name
+  workflow_dispatch:  # Add this line to allow manual triggers
 
 jobs:
   deploy:
