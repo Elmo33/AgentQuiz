@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    font-family: 'Noto Sans Georgian', sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3A0CA3; /* Dark Purple background */
+    color: #FFFFFF; /* White text */
+    flex-direction: column;
+}
+
+#app {
+    text-align: center;
+    background-color: #5A189A; /* Medium Purple background for the main container */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative;
+    margin-bottom: 20px; /* Ensure space between main div and reference link */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #9D4EDD; /* Light Purple background for buttons */
+    color: #FFFFFF; /* White text */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #7B2CBF; /* Darker Light Purple on hover */
+}
+
+#question-container {
+    margin-top: 20px;
+}
+
+#question-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-container button {
+    background-color: #9D4EDD; /* Light Purple background for answer buttons */
+    color: #FFFFFF; /* White text */
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+.btn-container button:hover {
+    background-color: #7B2CBF; /* Darker Light Purple on hover */
+}
+
+#feedback {
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    width: calc(100% - 40px); /* Make it the same width as the app, minus padding */
+    position: relative;
+    top: -30px;
+    left: 0;
+    background-color: #4CAF50; /* Default green background for feedback */
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#feedback.correct {
+    background-color: #4CAF50; /* Green for correct answers */
+}
+
+#feedback.incorrect {
+    background-color: #F44336; /* Red for incorrect answers */
+}
+
+#reference {
+    text-align: center;
+}
+
+#reference a {
+    color: #FFFFFF; /* White text for the URL */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#reference a:hover {
+    text-decoration: underline;
+}
+
+.score-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #9D4EDD; /* Match the button color */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
